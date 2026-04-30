@@ -6,85 +6,66 @@
   <title>ARIAN Career Pathways</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>:root{--font-heading:"Sora",sans-serif;--font-body:"Manrope",sans-serif}</style>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <p class="eyebrow">ARIAN (AK's Foundation) Career Pathways</p>
-      <h1>Discover Your Path. Design Your Future.</h1>
-      <p class="lead">ARIAN Career Pathways is a dedicated career guidance and mentoring platform focused on helping individuals make informed and confident career choices.</p>
-      <div class="hero-cta">
-        <a href="#plans" class="btn btn-primary">Explore Mentorship Plans</a>
-        <a href="#customise" class="btn btn-ghost">Customise Your Plan</a>
+  <main class="page" style="--navy:#0F2A44;--teal:#1FA4A9;--sky:#7FD1D6;--surface:#F7FBFC;--ink:#1E2A32;--section:#E9F3F4">
+    <header class="topbar">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="logo" width="52" height="52" class="brand-logo" />
+        <div>
+          <h1 id="brandName"></h1>
+          <p id="tagline"></p>
+        </div>
       </div>
-    </div>
-  </header>
+      <nav>
+        <a href="#home">Home</a><a href="#plans">Plans</a><a href="#custom-services">Custom Services</a><a href="#services">Services</a><a href="#founder">Founder</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <section id="plans" class="section container">
-      <div class="switch-row">
-        <button class="switch active">Mentoria's Plans</button>
-        <button class="switch">Customise Your Mentorship Plan</button>
-      </div>
+    <section id="home" class="hero"><h2 id="heroTitle"></h2><p id="aboutText"></p></section>
 
-      <div class="segment-row" id="segment-tabs"></div>
-      <div class="plan-grid" id="plan-grid"></div>
+    <section id="founder" class="founder">
+      <div><h2>About Founder</h2><h3 id="founderName"></h3><p id="founderBio" style="white-space:pre-line"></p></div>
+      <img src="images/founder.jpg" alt="Founder" />
     </section>
 
-    <section id="customise" class="section container">
+    <section id="plans" class="plans">
+      <div class="segmented-head">
+        <button id="plansBtn" class="active">Mentoria's Plans</button>
+        <button id="customBtn">Customise Your Mentorship Plan</button>
+      </div>
+      <div id="plansWrap">
+        <div class="audience-tabs" id="audienceTabs"></div>
+        <div class="plan-grid" id="planGrid"></div>
+      </div>
+    </section>
+
+    <section id="custom-services" class="custom-services" style="display:none">
       <h2>Want To Customise Your Mentorship Plan?</h2>
-      <p class="sub">If you want to subscribe to specific services from Mentoria that resolve your career challenges, you can choose one or more of the following.</p>
-      <div class="custom-grid" id="custom-grid"></div>
+      <p>If you want to subscribe to specific services, choose one or more modules below.</p>
+      <div class="service-card-grid" id="customGrid"></div>
     </section>
 
-    <section id="contact" class="section container">
-      <h2>About ARIAN</h2>
-      <p>Rooted in the belief that every person is unique, we guide learners by aligning their interests, abilities, and aspirations. Through personalised career counselling, emotional counselling, scientific assessments, and NLP-based interventions, we bring clarity and transformation to decision-making. Our interactive workshops further enhance awareness, life skills, and personal growth. We work closely with students, parents, and educators to build a supportive ecosystem for holistic development. Our mission is to transform confusion into clarity and potential into purposeful achievement.</p>
-    </section>
+    <section id="services" class="main-services"><h2>Core Services</h2><div class="main-service-grid" id="servicesGrid"></div></section>
 
-    <section class="section container">
-      <h2>Services</h2>
-      <div class="service-list">
-        <article><h3>1. Career Counselling</h3><p>Personalised one-on-one sessions designed to help students understand their strengths, interests, and suitable career options. The focus is on clarity, confidence, and informed decision-making.</p><p><strong>Who it is for:</strong> Students (Grade 8–12), College Graduates, Working Professionals</p><p><strong>Mode:</strong> Online / Offline / Hybrid</p></article>
-        <article><h3>2. Psychometric Assessment</h3><p>A scientific evaluation of aptitude, personality, and interests to identify the most suitable career pathways. Includes a detailed report and expert interpretation.</p><p><strong>Who it is for:</strong> Students (Grade 8–12), College Graduates, Working Professionals</p><p><strong>Mode:</strong> Online / Hybrid</p></article>
-        <article><h3>3. Stream Selection Guidance</h3><p>Guidance for students at a crucial stage of choosing the right stream after Grade 10, based on their profile and future aspirations.</p><p><strong>Who it is for:</strong> Students (Grade 9–10), College Graduates, Working Professionals</p><p><strong>Mode:</strong> Online / Offline</p></article>
-        <article><h3>4. Career Roadmap Planning</h3><p>Step-by-step planning including courses, entrance exams, skill development, and long-term career pathways for selected fields.</p><p><strong>Who it is for:</strong> Students (Grade 10–12), College Graduates, Working Professionals</p><p><strong>Mode:</strong> Online / Hybrid</p></article>
-        <article><h3>5. Workshops & Training Programs</h3><p>Interactive and activity-based workshops designed to engage, inspire, and empower participants. These sessions focus on career awareness, life skills development, effective teaching methodologies, classroom management strategies, and emotional wellbeing.</p><p><strong>Who it is for:</strong> Schools, Students, Parents, Teachers, Institutions</p><p><strong>Mode:</strong> Online / Offline / Hybrid</p></article>
-        <article><h3>6. Personal Counselling (Emotional & Academic Support)</h3><p>Supportive counselling sessions addressing emotional wellbeing, stress, anxiety, motivation, academic challenges, and personal growth. Focused on building resilience and confidence.</p><p><strong>Who it is for:</strong> Students, Parents, teachers, individuals</p><p><strong>Mode:</strong> Online / Offline / Hybrid</p></article>
-        <article><h3>7. NLP (Neuro-Linguistic Programming) Sessions</h3><p>Transformational sessions using NLP techniques to help individuals overcome limiting beliefs, improve mindset, enhance communication, and achieve personal and professional goals.</p><p><strong>Who it is for:</strong> Students, Parents, teachers, individuals</p><p><strong>Mode:</strong> Online / Offline / Hybrid</p></article>
+    <section id="testimonials" class="testimonials"><h2>Social Proof</h2><div class="testimonial-grid" id="testimonialsGrid"></div></section>
+
+    <section id="success-stories" class="main-services"><h2>Any Success Stories / Results</h2><article class="main-service-card"><p id="successStories" style="white-space:pre-line"></p></article></section>
+
+    <footer id="contact" class="footer">
+      <h2 id="contactTitle"></h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p id="phone"></p><p id="email"></p><p>Office location: None</p>
+          <div class="socials"><a id="instagram" target="_blank" rel="noreferrer">Instagram</a><a id="linkedin" target="_blank" rel="noreferrer">LinkedIn</a><a id="facebook" target="_blank" rel="noreferrer">Facebook</a></div>
+        </div>
+        <form class="contact-form"><h3>Send us your query</h3><input placeholder="Your name" required /><input type="email" placeholder="Your email" required /><input placeholder="Your phone (optional)" /><textarea placeholder="Tell us what you need help with" required></textarea><button type="submit">Submit</button></form>
       </div>
-    </section>
-
-    <section class="section container">
-      <h2>About Founder</h2>
-      <h3>Akila Victoria Martin</h3>
-      <p>Ms. Akila Victoria Martin is a distinguished educator, counsellor, career mentor, trainer, NLP practitioner, poet, and author with over two decades of experience in education, leadership, and emotional wellbeing. She has conducted more than 1,000 counselling sessions and facilitated over 200 workshops, impacting students, parents, and educators. She is the Founder of ARIAN (AK's Foundation), an initiative focused on nurturing academic excellence alongside emotional resilience. She currently serves as a Resource Person at Orient Blackswan, Career Counsellor at Mentoria, and Auditor & Trainer at Brilliant National School.</p>
-      <p>Photo: <a href="https://drive.google.com/file/d/1mIV1F3fPljR8wBv_JK_4smSZTXY2suSZ/view?usp=drive_link" target="_blank" rel="noreferrer">View Founder Photo</a></p>
-    </section>
-
-    <section class="section container">
-      <h2>Testimonials</h2>
-      <div class="testimonials">
-        <blockquote>Thank you for such an enriching session! It was insightful, crisp, and truly action-oriented. Finally, a workshop that respects teachers' mental and emotional well-being. <cite>- Satabdi Pal, Teacher</cite></blockquote>
-        <blockquote>Thank you so much Akila Ma'am for the wonderful career guidance session. Your guidance made things very clear and easy to understand. <cite>- Shivani Y, Student</cite></blockquote>
-        <blockquote>We extend our heartfelt thanks to you for your valuable insights and for making the workshop truly enriching and inspiring. <cite>- The Principal & Staff, Lourdes English Medium School, Kanajar</cite></blockquote>
-        <blockquote>The workshop session was very insightful and engaging. You guided me in choosing the right career path and exploring additional courses. <cite>- Shobith</cite></blockquote>
-      </div>
-      <p><a href="https://www.daijiworld.com/news/newsDisplay?newsID=1290157" target="_blank" rel="noreferrer">Press Coverage</a></p>
-    </section>
-
-    <section class="section container">
-      <h2>Contact</h2>
-      <p><strong>Phone / WhatsApp:</strong> 9972624052</p>
-      <p><strong>Email:</strong> <a href="mailto:akilamartin978@gmail.com">akilamartin978@gmail.com</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/akilavictoriamartin?igsh=ZHFhNGJwZTRwaHly" target="_blank" rel="noreferrer">akilavictoriamartin</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akila-martin-793519334?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer">Akila Martin</a></p>
-      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1ArxmyRMWs/" target="_blank" rel="noreferrer">Facebook Profile</a></p>
-    </section>
+    </footer>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,178 +1,58 @@
-﻿const plans = {
-  '8-9 STUDENTS': {
-    standard: {
-      title: 'Discover',
-      price: '5,500',
-      items: [
-        ['check', 'Psychometric assessment to measure your interests'],
-        ['check', '1 career counselling session with Mentoria\'s expert career coaches'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Invites to live webinars by industry experts'],
-        ['cross', 'Customised reports after each session with education pathways', true],
-        ['cross', 'Guidance on studying abroad', true],
-        ['cross', 'CV building during internships/graduation', true],
-      ],
-    },
-    premium: {
-      title: 'Discover plus+',
-      price: '15,000',
-      items: [
-        ['check', 'Psychometric assessments to measure your interests, personality and abilities'],
-        ['check', '8 career counselling sessions (1 every year) with Mentoria\'s expert career coaches until graduation'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Invites to live webinars by industry experts'],
-        ['check', 'Customised reports after each session with education pathways'],
-        ['check', 'Guidance on studying abroad'],
-        ['check', 'CV building during internships/graduation'],
-      ],
-    },
-  },
-  '10-12 STUDENTS': {
-    standard: {
-      title: 'Achieve Online',
-      price: '5,999',
-      items: [
-        ['check', 'Psychometric assessment to measure your interests, personality and abilities'],
-        ['check', '1 career counselling session'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Pre-recorded webinars by industry experts'],
-        ['cross', 'Customised reports after each session with education pathways', true],
-        ['cross', 'Guidance on studying abroad', true],
-        ['cross', 'CV reviews during internships/graduation', true],
-      ],
-    },
-    premium: {
-      title: 'Achieve Plus+',
-      price: '10,599',
-      items: [
-        ['check', 'Psychometric assessment to measure your interests, personality and abilities'],
-        ['check', '4 career counselling sessions'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Attend live webinars by industry experts'],
-        ['check', 'Customised reports after each session with education pathways'],
-        ['check', 'Guidance on studying abroad'],
-        ['check', 'CV reviews during internships/graduation'],
-      ],
-    },
-  },
-  'COLLEGE GRADUATES': {
-    standard: {
-      title: 'Ascend Online',
-      price: '6,499',
-      items: [
-        ['check', 'Psychometric assessment to measure your interests, personality and abilities'],
-        ['check', '1 career counselling session'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Pre-recorded webinars by industry experts'],
-        ['cross', 'Customised reports after each session with information on certificate/online courses', true],
-        ['cross', 'Guidance on studying abroad', true],
-        ['cross', 'CV reviews for job application', true],
-      ],
-    },
-    premium: {
-      title: 'Ascend Plus+',
-      price: '10,599',
-      items: [
-        ['check', 'Psychometric assessment to measure your interests, personality and abilities'],
-        ['check', '3 career counselling sessions'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Attend live webinars by industry experts'],
-        ['check', 'Customised reports after each session with information on certificate/online courses'],
-        ['check', 'Guidance on studying abroad'],
-        ['check', 'CV reviews for job application'],
-      ],
-    },
-  },
-  'WORKING PROFESSIONALS': {
-    standard: {
-      title: 'Ascend Online',
-      price: '6,499',
-      items: [
-        ['check', 'Psychometric assessment to measure your interests, personality and abilities'],
-        ['check', '1 career counselling session'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Pre-recorded webinars by industry experts'],
-        ['cross', 'Customised reports after each session with information on certificate/online courses', true],
-        ['cross', 'Guidance on studying abroad', true],
-        ['cross', 'CV reviews for job application', true],
-      ],
-    },
-    premium: {
-      title: 'Ascend Plus+',
-      price: '10,599',
-      items: [
-        ['check', 'Psychometric assessment to measure your interests, personality and abilities'],
-        ['check', '3 career counselling sessions'],
-        ['check', 'Lifetime access to Knowledge Gateway'],
-        ['check', 'Attend live webinars by industry experts'],
-        ['check', 'Customised reports after each session with information on certificate/online courses'],
-        ['check', 'Guidance on studying abroad'],
-        ['check', 'CV reviews for job application'],
-      ],
-    },
-  },
-};
+﻿const data = {
+  brandName: "ARIAN (AK's Foundation) Career Pathways",
+  tagline: "Discover Your Path. Design Your Future.",
+  about: "ARIAN Career Pathways is a dedicated career guidance and mentoring platform focused on helping individuals make informed and confident career choices. Rooted in the belief that every person is unique, we guide learners by aligning their interests, abilities, and aspirations. Through personalised career counselling, emotional counselling, scientific assessments, and NLP-based interventions, we bring clarity and transformation to decision-making. Our interactive workshops further enhance awareness, life skills, and personal growth. We work closely with students, parents, and educators to build a supportive ecosystem for holistic development. Our mission is to transform confusion into clarity and potential into purposeful achievement.",
+  founderName: "Akila Victoria Martin",
+  founderBio: `Ms. Akila Victoria Martin is a distinguished educator, counsellor, career mentor, trainer, NLP practitioner, poet, and author with over two decades of experience in education, leadership, and emotional wellbeing. She has conducted more than 1,000 counselling sessions and facilitated over 200 workshops, impacting students, parents, and educators.
+She is the Founder of ARIAN (AK's Foundation), an initiative focused on nurturing academic excellence alongside emotional resilience. Her work emphasises personalised guidance, helping students discover their strengths and make informed career choices.
+She currently serves as a Resource Person at Orient Blackswan, Career Counsellor at Mentoria, and Auditor & Trainer at Brilliant National School. She has held leadership roles including Principal, Vice Principal, and Academic Coordinator across reputed institutions.
+Academically accomplished with multiple qualifications and certifications, she continues to inspire individuals with her empathetic approach and strong belief in human potential.`,
+  phone: "9972624052",
+  email: "akilamartin978@gmail.com",
+  instagram: "https://www.instagram.com/akilavictoriamartin?igsh=ZHFhNGJwZTRwaHly",
+  linkedin: "https://www.linkedin.com/in/akila-martin-793519334?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  facebook: "https://www.facebook.com/share/1ArxmyRMWs/",
+  successStories: `Her contributions have been widely recognised through numerous accolades, reflecting her excellence across education, counselling, and creative expression. She is the recipient of the 21st Century Emily Dickinson Award (2025) for her poetry book ARIAN – A Train of Thoughts and Experiences. She has also been honoured as Best Poet for her poem “Thank You Teacher” featured in Surreal Moments – A Collection of Beautiful Poems, and received the Rise & Release Literary Award for her story When the Tide Turns, published in The Art of Letting Go.
 
-const customise = [
-  ['CV Building', '2000', 'Is your CV making a great first impression on your behalf?'],
-  ['LinkedIn Profile Building', '2000', 'Revamp your LinkedIn profile with recommendations from recruitment experts.'],
-  ['LinkedIn Profile + CV Building', '3500', 'Get your CV and LinkedIn profile built by HR/Recruitment experts.'],
-  ['Job Application Strategy', '4000', 'Build the right pipeline with a customised job application tracker.'],
-  ['Career Report', '2500', 'Detailed psychometric report with analysis of interests, personality and abilities.'],
-  ['Career Report + Career Counselling', '4000', 'Connect with career coaches and get a detailed action plan.'],
-  ['Knowledge Gateway + Career Helpline Access', '250/month', 'Direct access to experts through a dedicated career helpline.'],
-  ['One-to-One Session with a Career Expert', '3500 per interaction for 1 hour', 'Resolve career queries through one-on-one sessions.'],
-  ['Overseas Admission Planner', '3000 for a planner with top 10 colleges in India OR any 1 country abroad', 'Structured admission options in one resourceful planner.'],
-  ['Overseas Admission: SOP Brainstorm', '3000 for a one hour session', 'Improve admission chances by structuring your SOP.'],
-  ['Overseas Admission: SOP Review', '2500', 'Review your SOP/essay with admissions experts.'],
-  ['Interview Prep Session', '2000', 'Ace upcoming interviews with guidance from top HR experts.'],
-];
+Her other recognitions include the Math Genius Award (2015), and the Star Performer Award in NLP, showcasing her diverse expertise and impact. A published poet, her work has been featured in national anthologies such as Surreal Moments – A Collection of Beautiful Poems and Banjara Life, and she has been nominated twice for “Author of the Week” by StoryMirror.
 
-const tabWrap = document.getElementById('segment-tabs');
-const grid = document.getElementById('plan-grid');
-const customGrid = document.getElementById('custom-grid');
-let active = '8-9 STUDENTS';
-
-Object.keys(plans).forEach((key) => {
-  const b = document.createElement('button');
-  b.className = `segment ${key === active ? 'active' : ''}`;
-  b.textContent = key;
-  b.onclick = () => {
-    active = key;
-    [...tabWrap.children].forEach((c) => c.classList.remove('active'));
-    b.classList.add('active');
-    renderPlans();
-  };
-  tabWrap.appendChild(b);
-});
-
-function planCard(kind, data) {
-  return `
-    <article class="plan-card">
-      <small>${kind}</small>
-      <h3>${data.title}<br/>₹ ${data.price}</h3>
-      <ul>
-        ${data.items
-          .map(([state, text, strike]) => `<li><span class="${state}">${state === 'check' ? '✓' : '✕'}</span><span class="${strike ? 'strike' : ''}">${text}</span></li>`)
-          .join('')}
-      </ul>
-      <a href="#contact" class="buy">BUY NOW</a>
-    </article>`;
+Beyond awards, her true success lies in the lives she has impacted—guiding students towards clarity, empowering individuals to overcome challenges, and helping countless learners and families make confident, meaningful decisions for their future.`,
+  plans: JSON.parse(`[{"segment":"8-9 STUDENTS","standardTitle":"Discover","standardPrice":"5,500","standardFeatures":["Psychometric assessment to measure your interests","1 career counselling session with Mentoria's expert career coaches","Lifetime access to Knowledge Gateway","Invites to live webinars by industry experts"],"standardExcluded":["Customised reports after each session with education pathways","Guidance on studying abroad","CV building during internships/graduation"],"premiumTitle":"Discover plus+","premiumPrice":"15,000","premiumFeatures":["Psychometric assessments to measure your interests, personality and abilities","8 career counselling sessions (1 every year) with Mentoria's expert career coaches until graduation","Lifetime access to Knowledge Gateway","Invites to live webinars by industry experts","Customised reports after each session with education pathways","Guidance on studying abroad","CV building during internships/graduation"]},{"segment":"10-12 STUDENTS","standardTitle":"Achieve Online","standardPrice":"5,999","standardFeatures":["Psychometric assessment to measure your interests, personality and abilities","1 career counselling session","Lifetime access to Knowledge Gateway","Pre-recorded webinars by industry experts"],"standardExcluded":["Customised reports after each session with education pathways","Guidance on studying abroad","CV reviews during internships/graduation"],"premiumTitle":"Achieve Plus+","premiumPrice":"10,599","premiumFeatures":["Psychometric assessment to measure your interests, personality and abilities","4 career counselling sessions","Lifetime access to Knowledge Gateway","Attend live webinars by industry experts","Customised reports after each session with education pathways","Guidance on studying abroad","CV reviews during internships/graduation"]},{"segment":"COLLEGE GRADUATES","standardTitle":"Ascend Online","standardPrice":"6,499","standardFeatures":["Psychometric assessment to measure your interests, personality and abilities","1 career counselling session","Lifetime access to Knowledge Gateway","Pre-recorded webinars by industry experts"],"standardExcluded":["Customised reports after each session with information on certificate/online courses","Guidance on studying abroad","CV reviews for job application"],"premiumTitle":"Ascend Plus+","premiumPrice":"10,599","premiumFeatures":["Psychometric assessment to measure your interests, personality and abilities","3 career counselling sessions","Lifetime access to Knowledge Gateway","Attend live webinars by industry experts","Customised reports after each session with information on certificate/online courses","Guidance on studying abroad","CV reviews for job application"]},{"segment":"WORKING PROFESSIONALS","standardTitle":"Ascend Online","standardPrice":"6,499","standardFeatures":["Psychometric assessment to measure your interests, personality and abilities","1 career counselling session","Lifetime access to Knowledge Gateway","Pre-recorded webinars by industry experts"],"standardExcluded":["Customised reports after each session with information on certificate/online courses","Guidance on studying abroad","CV reviews for job application"],"premiumTitle":"Ascend Plus+","premiumPrice":"10,599","premiumFeatures":["Psychometric assessment to measure your interests, personality and abilities","3 career counselling sessions","Lifetime access to Knowledge Gateway","Attend live webinars by industry experts","Customised reports after each session with information on certificate/online courses","Guidance on studying abroad","CV reviews for job application"]}]`),
+  customPlans: JSON.parse(`[{"title":"CV Building","price":"2000","description":"Is your CV making a great first impression on your behalf? Our HR experts will help you build the kind of CV that stands out from the crowd and increases your chances of getting interview calls."},{"title":"LinkedIn Profile Building","price":"2000","description":"Revamp your LinkedIn profile with recommendations from recruitment experts to showcase your career journey and increase your chances of interview calls."},{"title":"LinkedIn Profile + CV Building","price":"3500","description":"Build the kind of profile recruiters would love to spend time on. Get your CV and LinkedIn profile built by our HR/Recruitment experts."},{"title":"Job Application Strategy","price":"4000","description":"Build the right pipeline for job interviews through a customised job application tracker with information on companies, job postings and steps you need to follow to land your dream job."}]`),
+  services: JSON.parse(`[{"title":"1. Career Counselling","description":"Personalised one-on-one sessions designed to help students understand their strengths, interests, and suitable career options. The focus is on clarity, confidence, and informed decision-making.","whoFor":"Students (Grade 8-12), College Graduates, Working Professionals","mode":"Online / Offline / Hybrid"},{"title":"2. Psychometric Assessment","description":"A scientific evaluation of aptitude, personality, and interests to identify the most suitable career pathways. Includes a detailed report and expert interpretation.","whoFor":"Students (Grade 8-12), College Graduates, Working Professionals","mode":"Online / Hybrid"},{"title":"3. Stream Selection Guidance","description":"Guidance for students at a crucial stage of choosing the right stream after Grade 10, based on their profile and future aspirations.","whoFor":"Students (Grade 9-10), College Graduates, Working Professionals","mode":"Online / Offline"}]`),
+  testimonials: JSON.parse(`[{"quote":"Thank you for such an enriching session! It was insightful, crisp, and truly action-oriented. I loved the practical templates and real examples you shared. Finally, a workshop that respects teachers’ mental and emotional well-being. Thank you, Akila Ma’am, for showing us how we can support one another and collaborate effectively. It also reminded us of the importance of appreciating ourselves and our co-workers.","name":"Satabdi Pal, Teacher"},{"quote":"Thank you so much Akila Ma’am for the wonderful career guidance session—it was really helpful and insightful. I truly enjoyed the experience and learned a lot from it. Your guidance made things very clear and easy to understand. I really appreciate your support and would definitely recommend this to others!","name":"Shivani Y, Student"},{"quote":"Dear Akila Ma’am, We extend our heartfelt thanks to you for your valuable insights and for making the workshop truly enriching and inspiring.","name":"The Principal & Staff, Lourdes English Medium School, Kanajar"}]`),
 }
 
-function renderPlans() {
-  const current = plans[active];
-  grid.innerHTML = planCard('STANDARD', current.standard) + planCard('PREMIUM', current.premium);
-}
+const AUD = ["8-9 STUDENTS","10-12 STUDENTS","COLLEGE GRADUATES","WORKING PROFESSIONALS"]
+let activeAudience = AUD[0]
 
-customGrid.innerHTML = customise
-  .map(([title, price, desc]) => `
-    <article class="custom-card">
-      <h4>${title}</h4>
-      <p class="price">₹${price}</p>
-      <p>${desc}</p>
-      <a href="#contact" class="buy">BUY NOW</a>
-    </article>`)
-  .join('');
+function el(id){return document.getElementById(id)}
+el('brandName').textContent = data.brandName
+el('tagline').textContent = data.tagline
+el('heroTitle').textContent = data.brandName
+el('aboutText').textContent = data.about
+el('founderName').textContent = data.founderName
+el('founderBio').textContent = data.founderBio
+el('successStories').textContent = data.successStories
+el('contactTitle').textContent = `Contact ${data.brandName}`
+el('phone').textContent = `Phone / WhatsApp: ${data.phone}`
+el('email').textContent = data.email
+el('instagram').href = data.instagram
+el('linkedin').href = data.linkedin
+el('facebook').href = data.facebook
 
-renderPlans();
+const audienceTabs = el('audienceTabs')
+AUD.forEach((a)=>{const b=document.createElement('button');b.className=`tab ${a===activeAudience?'active':''}`;b.textContent=a;b.onclick=()=>{activeAudience=a;[...audienceTabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');renderPlans()};audienceTabs.appendChild(b)})
+
+function feature(text, no=false){return `<li class="feature ${no?'no':'yes'}"><span>${no?'-':'+'}</span><p>${text}</p></li>`}
+function renderPlans(){const p=data.plans.find(x=>x.segment===activeAudience)||data.plans[0];el('planGrid').innerHTML=`<article class="plan-card"><small>STANDARD</small><h3>${p.standardTitle}</h3><h4>₹ ${p.standardPrice}</h4><ul>${(p.standardFeatures||[]).map(x=>feature(x)).join('')}${(p.standardExcluded||[]).map(x=>feature(x,true)).join('')}</ul><button>BUY NOW</button></article><article class="plan-card premium"><small>PREMIUM</small><h3>${p.premiumTitle}</h3><h4>₹ ${p.premiumPrice}</h4><ul>${(p.premiumFeatures||[]).map(x=>feature(x)).join('')}</ul><button>BUY NOW</button></article>`}
+renderPlans()
+
+el('customGrid').innerHTML = data.customPlans.map(c=>`<article class="service-card"><h3>${c.title}</h3><h4>₹ ${c.price}</h4><p>${c.description}</p><button>BUY NOW</button></article>`).join('')
+el('servicesGrid').innerHTML = data.services.map(s=>`<article class="main-service-card"><h3>${s.title}</h3><p>${s.description}</p><strong>Who it is for: ${s.whoFor}</strong><ul><li>Mode: ${s.mode}</li></ul></article>`).join('')
+el('testimonialsGrid').innerHTML = data.testimonials.map(t=>`<article><p>${t.quote}</p><h4>${t.name}</h4></article>`).join('')
+
+const plansBtn = el('plansBtn')
+const customBtn = el('customBtn')
+plansBtn.onclick = ()=>{plansBtn.classList.add('active');customBtn.classList.remove('active');el('plansWrap').style.display='block';el('custom-services').style.display='none'}
+customBtn.onclick = ()=>{customBtn.classList.add('active');plansBtn.classList.remove('active');el('plansWrap').style.display='none';el('custom-services').style.display='block'}
