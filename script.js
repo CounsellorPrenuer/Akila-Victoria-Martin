@@ -1,4 +1,4 @@
-﻿const data = {
+const data = {
   brandName: "ARIAN (AK's Foundation) Career Pathways",
   tagline: "Discover Your Path. Design Your Future.",
   about: "ARIAN Career Pathways is a dedicated career guidance and mentoring platform focused on helping individuals make informed and confident career choices. Rooted in the belief that every person is unique, we guide learners by aligning their interests, abilities, and aspirations. Through personalised career counselling, emotional counselling, scientific assessments, and NLP-based interventions, we bring clarity and transformation to decision-making. Our interactive workshops further enhance awareness, life skills, and personal growth. We work closely with students, parents, and educators to build a supportive ecosystem for holistic development. Our mission is to transform confusion into clarity and potential into purposeful achievement.",
@@ -50,7 +50,7 @@ renderPlans()
 
 el('customGrid').innerHTML = data.customPlans.map(c=>`<article class="service-card"><h3>${c.title}</h3><h4>₹ ${c.price}</h4><p>${c.description}</p><button>BUY NOW</button></article>`).join('')
 el('servicesGrid').innerHTML = data.services.map(s=>`<article class="main-service-card"><h3>${s.title}</h3><p>${s.description}</p><strong>Who it is for: ${s.whoFor}</strong><ul><li>Mode: ${s.mode}</li></ul></article>`).join('')
-el('testimonialsGrid').innerHTML = data.testimonials.map(t=>`<article><p>${t.quote}</p><h4>${t.name}</h4></article>`).join('')
+el('testimonialsGrid').innerHTML = data.testimonials.map(t=>`<article><p>${t.quote}</p></article>`).join('')
 
 const plansBtn = el('plansBtn')
 const customBtn = el('customBtn')
