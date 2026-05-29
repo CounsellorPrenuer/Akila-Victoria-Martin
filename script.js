@@ -56,3 +56,65 @@ const plansBtn = el('plansBtn')
 const customBtn = el('customBtn')
 plansBtn.onclick = ()=>{plansBtn.classList.add('active');customBtn.classList.remove('active');el('plansWrap').style.display='block';el('custom-services').style.display='none'}
 customBtn.onclick = ()=>{customBtn.classList.add('active');plansBtn.classList.remove('active');el('plansWrap').style.display='none';el('custom-services').style.display='block'}
+
+// Carousel Slider logic
+const totalPhotos = 71
+const slider = el('workshopSlider')
+const dotsContainer = el('sliderDots')
+
+// Generate slides dynamically without names or captions
+for (let i = 1; i <= totalPhotos; i++) {
+  const slide = document.createElement('div')
+  slide.style.minWidth = '100%'
+  slide.style.flexShrink = '0'
+  slide.style.display = 'flex'
+  slide.style.justifyContent = 'center'
+  slide.style.alignItems = 'center'
+  slide.style.background = '#000'
+  slide.style.height = '480px'
+
+  const img = document.createElement('img')
+  img.src = `images/photo-${i}.jpg`
+  img.alt = 'Workshop image'
+  img.style.maxWidth = '100%'
+  img.style.maxHeight = '100%'
+  img.style.objectFit = 'contain'
+  
+  slide.appendChild(img)
+  slider.appendChild(slide)
+}
+
+let currentIndex = 0
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`
+  updateDots()
+}
+
+// Generate pagination dots (only show active + subset to prevent clutter with 71 dots)
+function updateDots() {
+  dotsContainer.innerHTML = ''
+  // Display current index indicator, like 1 / 71 count for cleaner look
+  const countIndicator = document.createElement('span')
+  countIndicator.style.color = '#fff'
+  countIndicator.style.background = 'rgba(15, 42, 68, 0.75)'
+  countIndicator.style.padding = '4px 10px'
+  countIndicator.style.borderRadius = '20px'
+  countIndicator.style.fontSize = '12px'
+  countIndicator.style.fontWeight = 'bold'
+  countIndicator.style.fontFamily = 'sans-serif'
+  countIndicator.textContent = `${currentIndex + 1} / ${totalPhotos}`
+  dotsContainer.appendChild(countIndicator)
+}
+
+el('sliderPrev').onclick = () => {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalPhotos - 1
+  updateSlider()
+}
+
+el('sliderNext').onclick = () => {
+  currentIndex = (currentIndex < totalPhotos - 1) ? currentIndex + 1 : 0
+  updateSlider()
+}
+
+updateSlider()
+

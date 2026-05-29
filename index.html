@@ -21,7 +21,7 @@
         </div>
       </div>
       <nav>
-        <a href="#home">Home</a><a href="#founder">Founder</a><a href="#plans">Plans</a><a href="#services">Services</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a><a href="#founder">Founder</a><a href="#plans">Plans</a><a href="#services">Services</a><a href="#testimonials">Testimonials</a><a href="#workshops">Workshops</a><a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -60,7 +60,26 @@
         </a>
       </div>
     </section>
+    <section id="workshops" class="main-services">
+      <h2>Workshop Highlights</h2>
+      <p style="text-align:center; color:#3f6368; max-width:760px; margin:0 auto 1.5rem;">
+        Interactive workshops, training programs, parent sessions, and student mentoring highlights.
+      </p>
 
+      <!-- Slider Carousel -->
+      <div style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 16px; box-shadow: 0 10px 30px rgba(15, 42, 68, 0.15); border: 1px solid #d7e4e6; background: #fff;">
+        <div id="workshopSlider" style="display: flex; transition: transform 0.4s ease-in-out; width: 100%;">
+          <!-- Images will be populated dynamically by script.js -->
+        </div>
+
+        <!-- Slider Controls -->
+        <button id="sliderPrev" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: rgba(15, 42, 68, 0.8); border: none; color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 20px; font-weight: bold; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; outline: none;">&lt;</button>
+        <button id="sliderNext" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: rgba(15, 42, 68, 0.8); border: none; color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 20px; font-weight: bold; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; outline: none;">&gt;</button>
+        
+        <!-- Pagination Indicator -->
+        <div id="sliderDots" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 10;"></div>
+      </div>
+    </section>
 
     <section id="success-stories" class="main-services"><h2>Any Success Stories / Results</h2><article class="main-service-card"><p id="successStories" style="white-space:pre-line"></p></article></section>
 
