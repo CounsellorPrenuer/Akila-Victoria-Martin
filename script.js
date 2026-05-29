@@ -65,20 +65,21 @@ const dotsContainer = el('sliderDots')
 // Generate slides dynamically without names or captions
 for (let i = 1; i <= totalPhotos; i++) {
   const slide = document.createElement('div')
+  slide.style.width = '100%'
   slide.style.minWidth = '100%'
+  slide.style.maxWidth = '100%'
   slide.style.flexShrink = '0'
-  slide.style.display = 'flex'
-  slide.style.justifyContent = 'center'
-  slide.style.alignItems = 'center'
+  slide.style.display = 'block'
   slide.style.background = '#000'
   slide.style.height = '480px'
 
   const img = document.createElement('img')
   img.src = `images/photo-${i}.jpg`
   img.alt = 'Workshop image'
-  img.style.maxWidth = '100%'
-  img.style.maxHeight = '100%'
+  img.style.width = '100%'
+  img.style.height = '100%'
   img.style.objectFit = 'contain'
+  img.style.display = 'block'
   
   slide.appendChild(img)
   slider.appendChild(slide)
