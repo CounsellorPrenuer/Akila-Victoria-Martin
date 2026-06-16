@@ -23,34 +23,87 @@ Beyond awards, her true success lies in the lives she has impacted—guiding stu
   testimonials: JSON.parse(`[{"quote":"Thank you for such an enriching session! It was insightful, crisp, and truly action-oriented. I loved the practical templates and real examples you shared. Finally, a workshop that respects teachers’ mental and emotional well-being. Thank you, Akila Ma’am, for showing us how we can support one another and collaborate effectively. It also reminded us of the importance of appreciating ourselves and our co-workers.","name":"Satabdi Pal, Teacher"},{"quote":"Thank you so much Akila Ma’am for the wonderful career guidance session—it was really helpful and insightful. I truly enjoyed the experience and learned a lot from it. Your guidance made things very clear and easy to understand. I really appreciate your support and would definitely recommend this to others!","name":"Shivani Y, Student"},{"quote":"Dear Akila Ma’am, We extend our heartfelt thanks to you for your valuable insights and for making the workshop truly enriching and inspiring.","name":"The Principal & Staff, Lourdes English Medium School, Kanajar"}]`),
 }
 
+function driveThumb(url, size = "w1200") {
+  if (!url) return ""
+  const m = url.match(/\/d\/([^/]+)/) || url.match(/[?&]id=([^&]+)/)
+  const id = m?.[1]
+  if (!id) return url
+  return `https://drive.google.com/thumbnail?id=${id}&sz=${size}`
+}
+
 const AUD = ["8-9 STUDENTS","10-12 STUDENTS","COLLEGE GRADUATES","WORKING PROFESSIONALS"]
 let activeAudience = AUD[0]
+let currentData = data
 
 function el(id){return document.getElementById(id)}
-el('brandName').textContent = data.brandName
-el('tagline').textContent = data.tagline
-el('heroTitle').textContent = data.brandName
-el('aboutText').textContent = data.about
-el('founderName').textContent = data.founderName
-el('founderBio').textContent = data.founderBio
-el('successStories').textContent = data.successStories
-el('contactTitle').textContent = `Contact ${data.brandName}`
-el('phone').textContent = `Phone / WhatsApp: ${data.phone}`
-el('email').textContent = data.email
-el('instagram').href = data.instagram
-el('linkedin').href = data.linkedin
-el('facebook').href = data.facebook
+
+function feature(text, no=false){return `<li class="feature ${no?'no':'yes'}"><span>${no?'-':'+'}</span><p>${text}</p></li>`}
+
+function renderPlans(){
+  const p = currentData.plans.find(x=>x.segment===activeAudience)||currentData.plans[0];
+  if (!p) return;
+  el('planGrid').innerHTML=`<article class="plan-card"><small>STANDARD</small><h3>${p.standardTitle}</h3><h4>₹ ${p.standardPrice}</h4><ul>${(p.standardFeatures||[]).map(x=>feature(x)).join('')}${(p.standardExcluded||[]).map(x=>feature(x,true)).join('')}</ul><button>BUY NOW</button></article><article class="plan-card premium"><small>PREMIUM</small><h3>${p.premiumTitle}</h3><h4>₹ ${p.premiumPrice}</h4><ul>${(p.premiumFeatures||[]).map(x=>feature(x)).join('')}</ul><button>BUY NOW</button></article>`
+}
+
+function renderPage(updatedData) {
+  currentData = updatedData
+  el('brandName').textContent = currentData.brandName
+  el('tagline').textContent = currentData.tagline
+  el('heroTitle').textContent = currentData.brandName
+  el('aboutText').textContent = currentData.about
+  el('founderName').textContent = currentData.founderName
+  el('founderBio').textContent = currentData.founderBio
+  el('successStories').textContent = currentData.successStories
+  el('contactTitle').textContent = `Contact ${currentData.brandName}`
+  el('phone').textContent = `Phone / WhatsApp: ${currentData.phone}`
+  el('email').textContent = currentData.email
+  
+  if (currentData.instagram) { el('instagram').href = currentData.instagram; el('instagram').style.display = ''; } else { el('instagram').style.display = 'none'; }
+  if (currentData.linkedin) { el('linkedin').href = currentData.linkedin; el('linkedin').style.display = ''; } else { el('linkedin').style.display = 'none'; }
+  if (currentData.facebook) { el('facebook').href = currentData.facebook; el('facebook').style.display = ''; } else { el('facebook').style.display = 'none'; }
+
+  const brandLogo = document.querySelector('.brand-logo')
+  if (brandLogo && currentData.logoUrl) {
+    brandLogo.src = driveThumb(currentData.logoUrl, "w256")
+  }
+  const founderImg = document.querySelector('#founder img')
+  if (founderImg && currentData.founderPhotoUrl) {
+    founderImg.src = driveThumb(currentData.founderPhotoUrl, "w1200")
+  }
+
+  renderPlans()
+
+  if (currentData.customPlans) {
+    el('customGrid').innerHTML = currentData.customPlans.map(c=>`<article class="service-card"><h3>${c.title}</h3><h4>₹ ${c.price}</h4><p>${c.description}</p><button>BUY NOW</button></article>`).join('')
+  }
+  if (currentData.services) {
+    el('servicesGrid').innerHTML = currentData.services.map(s=>`<article class="main-service-card"><h3>${s.title}</h3><p>${s.description}</p><strong>Who it is for: ${s.whoFor}</strong><ul><li>Mode: ${s.mode}</li></ul></article>`).join('')
+  }
+  if (currentData.testimonials) {
+    el('testimonialsGrid').innerHTML = currentData.testimonials.map(t=>`<article><p>${t.quote}</p></article>`).join('')
+  }
+}
+
+// Initial render with fallback data
+renderPage(data)
 
 const audienceTabs = el('audienceTabs')
 AUD.forEach((a)=>{const b=document.createElement('button');b.className=`tab ${a===activeAudience?'active':''}`;b.textContent=a;b.onclick=()=>{activeAudience=a;[...audienceTabs.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');renderPlans()};audienceTabs.appendChild(b)})
 
-function feature(text, no=false){return `<li class="feature ${no?'no':'yes'}"><span>${no?'-':'+'}</span><p>${text}</p></li>`}
-function renderPlans(){const p=data.plans.find(x=>x.segment===activeAudience)||data.plans[0];el('planGrid').innerHTML=`<article class="plan-card"><small>STANDARD</small><h3>${p.standardTitle}</h3><h4>₹ ${p.standardPrice}</h4><ul>${(p.standardFeatures||[]).map(x=>feature(x)).join('')}${(p.standardExcluded||[]).map(x=>feature(x,true)).join('')}</ul><button>BUY NOW</button></article><article class="plan-card premium"><small>PREMIUM</small><h3>${p.premiumTitle}</h3><h4>₹ ${p.premiumPrice}</h4><ul>${(p.premiumFeatures||[]).map(x=>feature(x)).join('')}</ul><button>BUY NOW</button></article>`}
-renderPlans()
+// Fetch live data from Sanity V3
+const projectId = 'enyzzhl6'
+const dataset = 'production'
+const query = '*[_type == "homePage"][0]'
+const sanityUrl = `https://${projectId}.api.sanity.io/v2025-01-01/data/query/${dataset}?query=${encodeURIComponent(query)}`
 
-el('customGrid').innerHTML = data.customPlans.map(c=>`<article class="service-card"><h3>${c.title}</h3><h4>₹ ${c.price}</h4><p>${c.description}</p><button>BUY NOW</button></article>`).join('')
-el('servicesGrid').innerHTML = data.services.map(s=>`<article class="main-service-card"><h3>${s.title}</h3><p>${s.description}</p><strong>Who it is for: ${s.whoFor}</strong><ul><li>Mode: ${s.mode}</li></ul></article>`).join('')
-el('testimonialsGrid').innerHTML = data.testimonials.map(t=>`<article><p>${t.quote}</p></article>`).join('')
+fetch(sanityUrl)
+  .then(res => res.json())
+  .then(json => {
+    if (json.result) {
+      renderPage(json.result)
+    }
+  })
+  .catch(err => console.error('Sanity fetch failed, using local fallback:', err))
 
 const plansBtn = el('plansBtn')
 const customBtn = el('customBtn')
